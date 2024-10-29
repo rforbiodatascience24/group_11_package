@@ -6,7 +6,8 @@
 #' @return a string of codons
 #' @export
 #'
-#' @examples
+#' @examples find_codons("UUUUCUUAUAGGUGA",1)
+#'  output= c("UUU","UCU","UAU","AGG","UGA"))
 find_codons <- function(sequence, start = 1){
   seq_length <- nchar(sequence)
   codons <- substring(sequence,

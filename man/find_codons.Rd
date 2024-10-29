@@ -17,3 +17,7 @@ a string of codons
 \description{
 Extract each individual codons from a sequence.
 }
+\examples{
+find_codons("UUUUCUUAUAGGUGA",1)
+ output= c("UUU","UCU","UAU","AGG","UGA"))
+}

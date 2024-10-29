@@ -1,2 +1,3 @@
-DNA_seq <- 'AAGCTTTTTTGCA'
-convert_to_RNA(DNA_seq)
+test_that("succesfully converted to RNA", {
+  expect_equal(convert_to_RNA("AAGCTTTTTTGCA"), "AAGCUUUUUUGCA")
+})

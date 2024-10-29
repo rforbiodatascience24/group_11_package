@@ -1,8 +1,8 @@
 ---
-title: "Vignette_name"
+title: "dogma"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette_name}
+  %\VignetteIndexEntry{dogma}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

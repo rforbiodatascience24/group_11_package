@@ -14,12 +14,31 @@ knitr::opts_chunk$set(
 )
 ```
 
+<<<<<<< HEAD
 
 
+=======
+# Introduction
+
+This vignette describes the use of the dogma package, which recreates the central dogma of molecular biology. There are five functions included in the dogma package which can be used consecutively: `generate_dna_sequence()`, `convert_to_rna()`, `find_codons()`, `translate()`, `peptide_plot()`.
+
+# Installation
+
+To use this package, you need to install the following dependencies:
+
+```{r}
+# install.packages("ggplot2")  # For plotting (`ggplot`, `aes`, `geom_col`, `theme_bw`, `theme`).
+# install.packages("stringr")   # For string manipulation (`str_split`, `boundary`, `str_count`).
+```
+
+Load libraries:
+
+>>>>>>> 45af8a9c22b0d13d4d0ba8f96b8374fb41ab17d1
 ```{r setup}
 library(dogma)
 ```
 
+<<<<<<< HEAD
 #function 1
 #function 2
 #function 3
@@ -27,3 +46,47 @@ library(dogma)
 #function 5
 
 
+=======
+# Generating a DNA sequence:
+
+The first step is to generate a random DNA sequence with the function generate_dna_sequence(): This function takes a number as input, which represents the length of the sequence that is to be generated. Then it creates a random combination of characters A, T, G, C.
+
+# Converting DNA to RNA:
+
+Next, the DNA sequence is converted to RNA with the function convert_to_rna(): The function replaces each thymine (T) occurence in the input DNA sequence with an uracil (U) and outputs an RNA sequence.
+
+# Extracting codons from RNA sequence:
+
+Next, the find_codons() function, extracts codons from the RNA sequence: By default, this function begins extracting codons from the beginning of the sequence. The substring() function is used to extract portions of the sequence.The first argument specifies the starting positions of the codons. It generates a sequence of positions starting from start up to seq_length - 3 + 1, in steps of 3 (the length of a codon). The last argument specifies the ending positions of the codons, generating a sequence from 3 + start - 1 to seq_length, also in steps of 3. Finally, the function returns a vector of codons extracted from the input sequence.
+
+# Translating codons to peptide sequence:
+
+The vector of extracted codons is translated into a protein sequence with the function translate(). This function returns a string of characters representing the sequence of amino acids of the translated peptide.
+
+# Plotting the amino acid composition of the translated peptide:
+
+Lastly, the peptide_plot() function plots the composition of amino acids of the translated peptide. This function takes a character string representing a protein sequence as input and it counts how many times each amino acid occurs in it. Then it creates a bar plot object where each column represents a amino acid. This functions includes the following dependencies, which have been added in the documentation: \#' @importFrom ggplot2 ggplot aes geom_col theme_bw theme \#' @importFrom stringr str_split boundary str_count These are included as they are necessary, as the package limits unnecessary dependencies.
+
+# Example usage:
+
+```{r}
+dna_seq <- generate_dna_sequence(25) # "CCGAGTAGAATACAGGCTCTGTCTA"
+rna_seq <- convert_to_rna(dna_seq) # "CCGAGUAGAAUACAGGCUCUGUCUA"
+codons <- find_codons(rna_seq) # "CCG" "AGU" "AGA" "AUA" "CAG" "GCU" "CUG" "UCU"
+peptide_seq <- translate(codons) # "PSRIQALS"
+# peptide_plot(peptide_seq) # bar plot
+```
+
+# Usage and considerations:
+
+This package can be useful for bioinformaticians who want to replicate the central dogma of molecular biology. A valuable function to add would be a transription() function, which would take a DNA sequence and create a complementary RNA sequence, based on the base pairing rules (A:U, T:A, G:C, C:G).
+
+The dependencies of the dogma package to other packages have been kept minimal so as to enhance maintainability, performance and compatibility. These dependencies concern the function peptide_plot() and were added using @importFrom.
+
+```{r}
+#' @importFrom ggplot2 ggplot aes geom_col theme_bw theme
+#' @importFrom stringr str_split boundary str_count
+```
+
+This way, the package imports specific functions from a package and is preferable for frequent or global usage, instead of using package::function() which is preferable for occasional or single-use calls.
+>>>>>>> 45af8a9c22b0d13d4d0ba8f96b8374fb41ab17d1

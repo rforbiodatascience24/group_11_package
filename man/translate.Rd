@@ -7,11 +7,14 @@
 translate(codons)
 }
 \arguments{
-\item{codons}{A vector of codons}
+\item{codons}{A character vector containing codons}
 }
 \value{
-the translated protein sequence in string format
+A character string representing the translated protein sequence
 }
 \description{
 Translate codons into protein sequence
+}
+\examples{
+translate(c("UUU", "UCU")) # Expected output: "FS"
 }

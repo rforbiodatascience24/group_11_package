@@ -1,13 +1,12 @@
 #' Extract each individual codons from a sequence.
 #'
-#' @param sequence a RNA sequence
-#' @param start where in the sequence you want to start
+#' @param sequence A character string representing an RNA sequence
+#' @param start The starting position from which the codon extraction will start.
 #'
-#' @return a string of codons
+#' @return A character vector containing codons
 #' @export
 #'
-#' @examples find_codons("UUUUCUUAUAGGUGA",1)
-#' output= c("UUU","UCU","UAU","AGG","UGA")
+#' @examples find_codons("UUUUCUUAUAGGUGA",1) # Expected output: c("UUU","UCU","UAU","AGG","UGA")
 find_codons <- function(sequence, start = 1){
   seq_length <- nchar(sequence)
   codons <- substring(sequence,

@@ -7,17 +7,16 @@
 find_codons(sequence, start = 1)
 }
 \arguments{
-\item{sequence}{a RNA sequence}
+\item{sequence}{A character string representing an RNA sequence}
 
-\item{start}{where in the sequence you want to start}
+\item{start}{The starting position from which the codon extraction will start.}
 }
 \value{
-a string of codons
+A character vector containing codons
 }
 \description{
 Extract each individual codons from a sequence.
 }
 \examples{
-find_codons("UUUUCUUAUAGGUGA",1)
-output= c("UUU","UCU","UAU","AGG","UGA")
+find_codons("UUUUCUUAUAGGUGA",1) # Expected output: c("UUU","UCU","UAU","AGG","UGA")
 }

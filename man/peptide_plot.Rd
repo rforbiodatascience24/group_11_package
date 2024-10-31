@@ -2,16 +2,16 @@
 % Please edit documentation in R/peptide_plot.R
 \name{peptide_plot}
 \alias{peptide_plot}
-\title{Plot aminoacid composition of peptide sequence}
+\title{Plot amino acid composition of peptide sequence}
 \usage{
 peptide_plot(peptide_seq)
 }
 \arguments{
-\item{peptide_seq}{A peptide sequence}
+\item{peptide_seq}{A character string representing a peptide sequence.}
 }
 \value{
-Plot of counts of each aminoacid in the sequence.
+A ggplot object representing a bar plot of the counts of each amino acid in the provided peptide sequence.
 }
 \description{
-Plot aminoacid composition of peptide sequence
+Plot amino acid composition of peptide sequence
 }

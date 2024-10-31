@@ -1,14 +1,12 @@
 #' Translate codons into protein sequence
 #'
-#' @param codons A vector of codons
+#' @param codons A character vector containing codons
 
 #'
-#' @return the translated protein sequence in string format
+#' @return A character string representing the translated protein sequence
 #' @export
 #'
-#' @examples translate <- function(c("UUU", "UCU")){
-#'   peptide_seq <- paste0(codon_to_amino[codons], collapse = "")
-#'   return(peptide_seq)
+#' @examples translate(c("UUU", "UCU")) # Expected output: "FS"
 translate <- function(codons){
   peptide_seq <- paste0(codon_to_amino[codons], collapse = "")
   return(peptide_seq)

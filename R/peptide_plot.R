@@ -1,10 +1,10 @@
-#' Plot aminoacid composition of peptide sequence
+#' Plot amino acid composition of peptide sequence
 #' @importFrom ggplot2 ggplot aes geom_col theme_bw theme
 #' @importFrom stringr str_split boundary str_count
 #'
-#' @param peptide_seq A peptide sequence
+#' @param peptide_seq A character string representing a peptide sequence.
 #'
-#' @return Plot of counts of each aminoacid in the sequence.
+#' @return A ggplot object representing a bar plot of the counts of each amino acid in the provided peptide sequence.
 #' @export
 #'
 #' @examples
@@ -18,7 +18,7 @@ peptide_plot <- function(peptide_seq){
     as.data.frame()
 
   colnames(counts) <- c("Counts")
-  counts[["amino acid"]] <- rownames(counts)
+  counts[["unique_aa"]] <- rownames(counts)
 
   plot <- counts |>
     ggplot2::ggplot(ggplot2::aes(x = unique_aa, y = Counts, fill = unique_aa)) +
